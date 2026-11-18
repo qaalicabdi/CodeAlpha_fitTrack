@@ -1,0 +1,105 @@
+{
+  "expo": {
+    "name": "FITTRACK",
+    "slug": "fittrack",
+    "version": "1.0.0",
+    "scheme": "fittrack",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "backgroundColor": "#F7F9F7",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.fittrack.app",
+      "infoPlist": {
+        "NSHealthShareUsageDescription": "FITTRACK reads your step count to show daily progress. Data stays on this device."
+      }
+    },
+    "android": {
+      "package": "com.fittrack.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#B8F36B",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "permissions": [
+        "android.permission.ACTIVITY_RECOGNITION",
+        "android.permission.health.READ_STEPS",
+        "android.permission.RECORD_AUDIO"
+      ],
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro",
+      "output": "single"
+    },
+    "plugins": [
+      [
+        "expo-router",
+        {
+          "headers": {
+            "Cross-Origin-Embedder-Policy": "credentialless",
+            "Cross-Origin-Opener-Policy": "same-origin"
+          }
+        }
+      ],
+      "expo-status-bar",
+      "expo-sqlite",
+      "expo-font",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#123D2D",
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 120,
+          "dark": {
+            "backgroundColor": "#0C1511"
+          }
+        }
+      ],
+      "@react-native-community/datetimepicker",
+      [
+        "expo-sensors",
+        {
+          "motionPermission": "FITTRACK uses motion data to count your steps. Your data stays on this device."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "FITTRACK lets you choose a profile photo. It is stored only on this device.",
+          "cameraPermission": false
+        }
+      ],
+      "react-native-health-connect",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "minSdkVersion": 26
+          }
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "headers": {
+          "Cross-Origin-Embedder-Policy": "credentialless",
+          "Cross-Origin-Opener-Policy": "same-origin"
+        },
+        "asyncRoutes": {
+          "web": true
+        }
+      },
+      "eas": {
+        "projectId": "a1d1c3f1-af46-4d80-94a0-4aaaed0f5332"
+      }
+    },
+    "owner": "qaalicabdi-2"
+  }
+}
